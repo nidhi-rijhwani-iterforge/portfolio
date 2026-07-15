@@ -43,14 +43,14 @@
 }
 .nav-links a:hover, 
 .nav-links a:active {
-    color: #007bff;
+    color: #4694e8;
 }
 .btn-hire {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #4694e8;
     color: #fff;
     border: none;
     border-radius: 0.70rem;
@@ -75,5 +75,102 @@
     }
     .btn-hire {
         width: fit-content;
+    }
+}
+
+/* Hero Section  */
+.hero {
+    padding: 2rem 0 ;
+}
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 22rem; /* flexible on left & fixed right */
+    align-items: center;
+    gap: 4rem;
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.status-badge {
+    width: fit-content;
+    padding: 0.6rem;
+    background-color: #e5e7eb;
+    color: #4694e8;
+    border: 1px solid #51677e;
+    border-radius: 99rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.hero-text h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333;
+}
+.hero-text span {
+    color: #555;
+}
+.hero-text p {
+    color: #555;
+    line-height: 1.2;
+    max-width: 35rem;
+}
+.hero-buttons {
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+}
+.btn {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+.btn-primary {
+    background-color: #4694e8;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #0b3868;
+}
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #4567d8;
+    border: 1px solid #bebebe;
+}
+.btn-secondary:hover {
+    background: #e5e5e5;
+}
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+.avatar {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 5px solid #4694e8;
+    background: #4694e8;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:40rem) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }    
+    .hero-text {
+        align-items: center;
+    }
+    .hero-buttons {
+        justify-content: center;
     }
 }

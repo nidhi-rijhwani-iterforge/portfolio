@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -52,7 +53,7 @@
     <!-- Hero Section Ends-->
 
     <!-- Project Section -->
-    <div id="projects" class="projects">
+    <section id="projects" class="projects">
         <div class="container">
             <header class="section-header">
                 <h2>My Projects</h2>
@@ -106,8 +107,107 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Project Section Ends-->
+
+    <!-- Skill Section -->
+    <section id="skills" class="skills">
+        <div class="skills-header">
+            <h2>Skills <span class="badge">⋆✧new</span></h2>
+            <p>Technologies I work with</p>
+        </div>
+
+        <div class="skills-container">
+
+            <!-- Left -->
+            <div class="left">
+            <h4>PROFICIENCY</h4>
+            <div class="skill">
+                <div class="skill-info">
+                <span>HTML</span>
+                <span>90%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:90%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                <span>CSS</span>
+                <span>85%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                <span>JavaScript</span>
+                <span>75%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:75%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                <span>Angular</span>
+                <span>60%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:60%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                <span>React</span>
+                <span>55%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:55%;"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                <span>Git</span>
+                <span>70%</span>
+                </div>
+                <div class="progress">
+                <div class="fill" style="width:70%;"></div>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- Right -->
+            <div class="right">
+            <h4>TOOLS & EXTRAS</h4>
+            <div class="tools">
+                <div class="tool">VS Code</div>
+                <div class="tool">GitHub</div>
+                <div class="tool">Chrome</div>
+                <div class="tool">CLI</div>
+            </div>
+
+            <h4>OTHER SKILLS</h4>
+            <div class="tags">
+                <span>Responsive design</span>
+                <span>Accessibility</span>
+                <span>REST APIs</span>
+                <span>Git flow</span>
+                <span>Flexbox</span>
+                <span>CSS Grid</span>
+                <span>LocalStorage</span>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skill Section Ends-->
 
     <!-- Contact Section -->
      <section id="contact" class="contact">
@@ -144,7 +244,7 @@
                 <form class="contact-form">
                     <div class="form-row">
                         <input type="text" placeholder="Name" required>
-                        <input type="text" placeholder="Email" required>
+                        <input type="email" placeholder="Email" required>
                     </div>
 
                     <input type="text" placeholder="Subject"required>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Nidhi Rijhwani</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#studentForm">Registration</a></li>
+                </ul>
+                <a href="#contact" class="btn-hire">Hire Me</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End-->
+
+    <div class="container">
+        <form id="studentForm" onsubmit="return validateFunction()">
+
+            <h2>Student Registration Form</h2>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <input type="text" id="firstName" placeholder=" ">
+                <label for="firstName">First Name</label>
+                <small class="error" id="firstNameError"></small>
+            </div>
+            <!-- First Name Ends-->
+
+            <!-- Middle Name -->
+            <div class="form-group">
+                <input type="text" id="middleName" placeholder=" ">
+                <label for="middleName">Middle Name</label>
+                <small class="error" id="middleNameError"></small>
+            </div>
+            <!-- Middle Name Ends -->
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <input type="text" id="lastName" placeholder=" ">
+                <label for="lastName">First Name</label>
+                <small class="error" id="lastNameError"></small>
+            </div>
+            <!-- Last Name Ends -->
+
+            <!-- Gender -->
+            <div class="gender-group">
+                <label for="gender" class="genter-title">Gender</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="male">
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female">
+                        Female
+                    </label>
+                </div>
+                <small class="error" id="genderError"></small>
+            </div>
+            <!-- Gender Ends -->
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" id="email" placeholder=" ">
+                <label for="email">Email ID</label>
+                <small class="error" id="emailError"></small>
+            </div>
+            <!-- Email Ends-->
+
+            <!-- Mobile -->
+            <div class="form-group">
+                <input type="text" id="mobile" placeholder=" ">
+                <label for="mobile">Mobile Number</label>
+                <small class="error" id="mobileError"></small>
+            </div>
+            <!-- Mobile Ends-->
+
+            <!-- Birth Date -->
+            <div class="form-group">
+                <input type="date" id="birthDate">
+                <label for="birthDate" class="date-label">Birth Date</label>
+                <small class="error" id="birthDateError"></small>
+            </div>
+            <!-- Birth Date Error-->
+
+            <!--Enable Button -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="enableAbout">
+                <label for="enableAbout">Enable About ME</label>
+            </div>
+            <!-- Enable Btn Ends-->
+
+            <!-- About ME -->
+            <div class="form-group">
+                <textarea  
+                id="aboutMe" 
+                rows="5" 
+                maxlength="1024" 
+                placeholder=" " 
+                disabled></textarea>
+                <label for="aboutMe">About Me</label>
+                <div class="counter">
+                    <span id="charCount">0</span>/1024 Characters
+                </div>
+                <small class="error" id="aboutMeError"></small>
+            </div>
+            <!-- About ME Ends-->
+
+            <!-- Submit Button -->
+            <button type="submit"> REGISTER </button>
+            <!-- Submit Button Ends -->
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

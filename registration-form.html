@@ -26,105 +26,113 @@
     </header>
     <!-- Header End-->
 
-    <div class="container">
-        <form id="studentForm" onsubmit="return validateFunction()">
+    <section class="registration-section">
+        <div class="container">
+            <form id="studentForm" class="student-form" onsubmit="return validateFunction()">
 
-            <h2>Student Registration Form</h2>
+                <h2 class="form-header">Student Registration Form</h2>
 
-            <!-- First Name -->
-            <div class="form-group">
-                <input type="text" id="firstName" placeholder=" ">
-                <label for="firstName">First Name</label>
-                <small class="error" id="firstNameError"></small>
-            </div>
-            <!-- First Name Ends-->
+                <div class="row">
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder=" ">
+                        <label for="firstName">First Name</label>
+                        <small class="error" id="firstNameError"></small>
+                    </div>
+                    <!-- First Name Ends-->
 
-            <!-- Middle Name -->
-            <div class="form-group">
-                <input type="text" id="middleName" placeholder=" ">
-                <label for="middleName">Middle Name</label>
-                <small class="error" id="middleNameError"></small>
-            </div>
-            <!-- Middle Name Ends -->
+                    <!-- Middle Name -->
+                    <div class="form-group">
+                        <input type="text" id="middleName" placeholder=" ">
+                        <label for="middleName">Middle Name</label>
+                        <small class="error" id="middleNameError"></small>
+                    </div>
+                    <!-- Middle Name Ends -->
 
-            <!-- Last Name -->
-            <div class="form-group">
-                <input type="text" id="lastName" placeholder=" ">
-                <label for="lastName">First Name</label>
-                <small class="error" id="lastNameError"></small>
-            </div>
-            <!-- Last Name Ends -->
-
-            <!-- Gender -->
-            <div class="gender-group">
-                <label for="gender" class="genter-title">Gender</label>
-                <div class="radio-group">
-                    <label>
-                        <input type="radio" name="gender" value="male">
-                        Male
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="female">
-                        Female
-                    </label>
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder=" ">
+                        <label for="lastName">Last Name</label>
+                        <small class="error" id="lastNameError"></small>
+                    </div>
+                    <!-- Last Name Ends -->
                 </div>
-                <small class="error" id="genderError"></small>
-            </div>
-            <!-- Gender Ends -->
 
-            <!-- Email -->
-            <div class="form-group">
-                <input type="email" id="email" placeholder=" ">
-                <label for="email">Email ID</label>
-                <small class="error" id="emailError"></small>
-            </div>
-            <!-- Email Ends-->
-
-            <!-- Mobile -->
-            <div class="form-group">
-                <input type="text" id="mobile" placeholder=" ">
-                <label for="mobile">Mobile Number</label>
-                <small class="error" id="mobileError"></small>
-            </div>
-            <!-- Mobile Ends-->
-
-            <!-- Birth Date -->
-            <div class="form-group">
-                <input type="date" id="birthDate">
-                <label for="birthDate" class="date-label">Birth Date</label>
-                <small class="error" id="birthDateError"></small>
-            </div>
-            <!-- Birth Date Error-->
-
-            <!--Enable Button -->
-            <div class="checkbox-group">
-                <input type="checkbox" id="enableAbout">
-                <label for="enableAbout">Enable About ME</label>
-            </div>
-            <!-- Enable Btn Ends-->
-
-            <!-- About ME -->
-            <div class="form-group">
-                <textarea  
-                id="aboutMe" 
-                rows="5" 
-                maxlength="1024" 
-                placeholder=" " 
-                disabled></textarea>
-                <label for="aboutMe">About Me</label>
-                <div class="counter">
-                    <span id="charCount">0</span>/1024 Characters
+                <!-- Gender -->
+                <div class="gender-group">
+                    <label for="gender" class="gender-title">Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-card">
+                            <input type="radio" name="gender" value="male">
+                            Male
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+                    </div>
+                    <small class="error" id="genderError"></small>
                 </div>
-                <small class="error" id="aboutMeError"></small>
-            </div>
-            <!-- About ME Ends-->
+                <!-- Gender Ends -->
 
-            <!-- Submit Button -->
-            <button type="submit"> REGISTER </button>
-            <!-- Submit Button Ends -->
+                <div class="row">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" ">
+                        <label for="email">Email ID</label>
+                        <small class="error" id="emailError"></small>
+                    </div>
+                    <!-- Email Ends-->
 
-        </form>
-    </div>
+                    <!-- Mobile -->
+                    <div class="form-group">
+                        <input type="text" id="mobile" placeholder=" ">
+                        <label for="mobile">Mobile Number</label>
+                        <small class="error" id="mobileError"></small>
+                    </div>
+                    <!-- Mobile Ends-->
+                </div>
+
+                <!-- Birth Date -->
+                <div class="form-group">
+                    <input type="date" id="birthDate">
+                    <label for="birthDate" class="date-label">Birth Date</label>
+                    <small class="error" id="birthDateError"></small>
+                </div>
+                <!-- Birth Date Error-->
+
+                <!--Enable Button -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enableAbout">
+                    <label for="enableAbout">Enable About ME</label>
+                </div>
+                <!-- Enable Btn Ends-->
+
+                <!-- About ME -->
+                <div class="form-group">
+                    <textarea  
+                    id="aboutMe" 
+                    rows="5" 
+                    maxlength="1024" 
+                    placeholder=" " 
+                    disabled></textarea>
+                    <label for="aboutMe">About Me</label>
+                    <div class="counter">
+                        <span id="charCount">0</span>/1024 Characters
+                    </div>
+                    <small class="error" id="aboutMeError"></small>
+                </div>
+                <!-- About ME Ends-->
+
+                <!-- Submit Button -->
+                <div class="btn-container">
+                    <button type="submit"> REGISTER </button>
+                </div>
+                <!-- Submit Button Ends -->
+
+            </form>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

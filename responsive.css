@@ -64,6 +64,41 @@
     .footer-links {
         gap: 1rem;
     }
+    
+    /* Registration Form */
+    .student-form {
+        padding: 25px;
+        margin: 10px auto;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .row .form-group {
+        width: 100%;
+    }
+    .form-header {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    /* Table Controls and Header Bar for Tablets */
+    .table-header-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .search-container input {
+        width: 100%;
+    }
+    .btn-add {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 30rem) {
@@ -107,6 +142,14 @@
     }
     
     /* Project Section */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tools grid */
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /* Contact Section */
     .contact-item {
@@ -135,4 +178,73 @@
         font-size: 0.8rem;
     }
 
+    /* Registration Form adjustments */
+    .student-form {
+        padding: 20px 15px;
+        margin: 5px auto;
+        gap: 15px;
+    }
+    .form-header {
+        font-size: 20px;
+    }
+    .form-group input,
+    .form-group textarea {
+        padding: 15px 12px 8px;
+        font-size: 14px;
+    }
+    .form-group label {
+        left: 12px;
+        top: 13px;
+        font-size: 14px;
+    }
+
+    /* Floating label adjustment for mobile sizes */
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+        top: -8px;
+        font-size: 11px;
+    }
+
+    .gender-title {
+        font-size: 14px;
+    }
+    .radio-group {
+        padding: 10px 5px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .radio-card {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    /* Make buttons full-width on mobile */
+    .student-form button {
+        width: 100%;
+        padding: 12px 0;
+        border-radius: 12px;
+    }
+    
+    /* Pagination and Actions stacking on mobile */
+    .pagination-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-pagination {
+        width: 100%;
+        text-align: center;
+    }
+    .form-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .form-actions button {
+        width: 100% !important;
+    }
 }

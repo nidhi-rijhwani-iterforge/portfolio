@@ -449,8 +449,13 @@ Student Registration Form StyleSheet Continue
 /* --- Rows --- */
 .row {
     display: flex;
-    grid-template-columns: repeat(3, 1fr); 
+    /* grid-template-columns: repeat(3, 1fr);  */
     gap: 20px;
+    align-items: flex-start;
+}
+.row .form-group {
+    flex: 1;
+    min-width: 0;
 }
 
 /* --- Floating Inputs --- */

@@ -567,3 +567,285 @@ textarea {
     transform: translateY(-2px); /* cutie */
     box-shadow: 0 8px 18px rgb(69, 103, 216);
 }
+
+/* =====
+CRUD Table, Paginations & Utility Stylesheet
+===== */
+
+/* --- Helper Utilities --- */
+.hidden {
+    display: none !important;
+    /* 
+    -element ko select karega jaise ki form ko and usko remove karedega completely layout se bina koi space liye. 
+    - Uske sath high priority set hogi jisse voh override kare styles display hogi dusro ki
+    - Efficient hai kahi jagah jahan hume toggling dikha ho ya koi elements nah dikhana ho 
+    */
+}
+
+/* --- Table Header Bar & Controls */
+.table-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.table-title {
+    margin-bottom: 0 !important;
+    text-align: left !important;
+}
+.table-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.search-container input {
+    padding: 12px 20px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 300px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: #4567d8;
+    box-shadow: 0 0 8px rgba(69, 103, 216, 0.2);
+}
+.btn-add {
+    padding: 12px 28px;
+    background: #4567d8;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-add:hover {
+    background: #284db8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(69, 103, 216, 0.3);
+}
+
+/* --- Student Table --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+.student-table th,
+.student-table td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #eee;
+}
+.student-table th {
+    background-color: #f4f7ff;
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.student-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, border-color 0.2s;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.student-table th.sortable:hover {
+    background-color: #e5ecff;
+}
+.student-table th.sorted-header {
+    background-color: #e5ecff;
+    color: #4567d8;
+}
+.student-table th.sort-asc {
+    border-bottom-color: #4567d8 !important;
+}
+.student-table th.sort-desc {
+    border-top-color: #4567d8 !important;
+}
+.student-table tbody tr {
+    transition: background-color 0.2s;
+}
+.student-table tbody tr:hover {
+    background-color: #f8faff;
+}
+.student-table tbody tr:nth-child(even) {
+    background-color: #fafbff;
+}
+
+/* Sorted Column Highlight */
+.student-table td.sorted-column {
+    background-color: rgba(69, 103, 216, 0.02);
+}
+.student-table tr:hover td.sorted-column {
+    background-color: rgba(69, 103, 216, 0.04);
+}
+
+/* Column Truncation for About Me */
+.col-about-me {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
+.btn-action {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-edit {
+    background-color: #eef2ff;
+    color: #4567d8;
+    border: 1px solid #c7d2fe;
+}
+.btn-edit:hover {
+    background-color: #4567d8;
+    color: #fff;
+}
+.btn-delete {
+    background-color: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fecaca;
+}
+.btn-delete:hover {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+/* No records state */
+.no-records {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+}
+
+/* --- Pagination Controls --- */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+}
+.btn-pagination {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #555;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-pagination:hover:not(:disabled) {
+    border-color: #4567d8;
+    color: #4567d8;
+    background: #f4f7ff;
+}
+.btn-pagination:disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    border-color: #e5e7eb;
+}
+#pageInfo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- Form Actions Layout --- */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.form-actions button {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-reset {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 2px solid #e5e7eb;
+}
+.btn-reset:hover:not(:disabled) {
+    background-color: #e5e7eb;
+    transform: translateY(-2px);
+}
+.btn-reset:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+.btn-cancel {
+    background-color: #fef2f2;
+    color: #ef4444;
+    border: 2px solid #fecaca;
+}
+.btn-cancel:hover {
+    background-color: #ef4444;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* --- Toast success alerts --- */
+.toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background-color: #10b981;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    font-weight: 600;
+    z-index: 1000;
+    transition: opacity 0.3s, transform 0.3s;
+    animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

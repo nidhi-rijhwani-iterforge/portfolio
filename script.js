@@ -204,9 +204,9 @@ aboutMe.addEventListener("input", function() {
 
 // Validation Function on Submitting the form 
 function validateForm(event) {
-    // if(event) {
-    //     event.preventDefault(); // Prevents default form submit and keeps data out of URL
-    // }
+    if(event) {
+        event.preventDefault(); // Prevents default form submit and keeps data out of URL
+    }
 
     let isFirstNameValid = validateFirstName();
     let isMiddleNameValid = validateMiddleName();
@@ -226,6 +226,10 @@ function validateForm(event) {
     // Succss 
     if (valid) {
         alert("Student Registration Successful!");
+        document.getElementById("studentForm").reset();
+        aboutMeGroup.style.display = "none";
+        charCount.textContent = "0";
+        clearErrors();
     }
 
     // return valid;

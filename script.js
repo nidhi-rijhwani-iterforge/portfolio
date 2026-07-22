@@ -65,7 +65,7 @@ aboutMe.oninput = function () {
 
 // Validation Patterns 
 const nameRegex = /^[A-Za-z]+$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const mobileRegex = /^[6-9]\d{9}$/;
 
 // Individual Validation Functions for Immediate Error Feedback
@@ -424,11 +424,15 @@ function getFilteredAndSortedStudents() {
     // 1. Filter
     if (searchQuery) {
         const query = searchQuery.toLowerCase();
-        result = result.filter(student => 
-            student.firstName.toLowerCase().includes(query) ||
+        result = result.filter(student => {
+            // console.log(student.birthDate, query);
+            return student.firstName.toLowerCase().includes(query) ||
             student.lastName.toLowerCase().includes(query) ||
             student.email.toLowerCase().includes(query) ||
-            student.mobile.toLowerCase().includes(query)
+            student.mobile.toLowerCase().includes(query) ||
+            new Date(student.birthDate).toLocaleDateString('en-GB').includes(query)
+        }
+            
         );
     }
     

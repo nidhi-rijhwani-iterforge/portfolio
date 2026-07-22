@@ -68,6 +68,17 @@ const nameRegex = /^[A-Za-z]+$/;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const mobileRegex = /^[6-9]\d{9}$/;
 
+// Automatically capitalize the first Letter
+// Hum hi kar dete easy user ke liye 
+function captializeFirstLetter(input) {
+    input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+}
+[firstName, middleName, lastName].forEach(input => {
+    input.addEventListener("input", function() {
+        captializeFirstLetter(this);
+    });
+});
+
 // Individual Validation Functions for Immediate Error Feedback
     
 // First Name Validation 
@@ -79,10 +90,11 @@ function validateFirstName() {
     } else if(!nameRegex.test(firstNameValue)) {
         showError("firstNameError", "Only alphabets are allowed.");
         return  false;
-    } else if (firstNameValue[0] !== firstNameValue[0].toUpperCase()) {
-        showError("firstNameError", "First Letter must be Uppercase!");
-        return  false;
-    }
+    } 
+    // else if (firstNameValue[0] !== firstNameValue[0].toUpperCase()) {
+    //     showError("firstNameError", "First Letter must be Uppercase!");
+    //     return  false;
+    // }
     clearError("firstNameError");
     return true;
 }
@@ -96,10 +108,11 @@ function validateMiddleName() {
     } else if(!nameRegex.test(middleNameValue)) {
         showError("middleNameError", "Only alphabets are allowed.");
         return false;
-    } else if (middleNameValue[0] !== middleNameValue[0].toUpperCase()) {
-        showError("middleNameError", "Middle Letter must be Uppercase!");
-        return false;
-    }
+    } 
+    // else if (middleNameValue[0] !== middleNameValue[0].toUpperCase()) {
+    //     showError("middleNameError", "Middle Letter must be Uppercase!");
+    //     return false;
+    // }
     clearError("middleNameError");
     return true;
 }
@@ -113,10 +126,11 @@ function validateLastName() {
     } else if(!nameRegex.test(lastNameValue)) {
         showError("lastNameError", "Only alphabets are allowed.");
         return false;
-    } else if (lastNameValue[0] !== lastNameValue[0].toUpperCase()) {
-        showError("lastNameError", "Last Letter must be Uppercase!");
-        return false;
-    }
+    } 
+    // else if (lastNameValue[0] !== lastNameValue[0].toUpperCase()) {
+    //     showError("lastNameError", "Last Letter must be Uppercase!");
+    //     return false;
+    // }
     clearError("lastNameError");
     return true;
 }
@@ -200,7 +214,9 @@ firstName.addEventListener("input", validateFirstName);
 middleName.addEventListener("input", validateMiddleName);
 lastName.addEventListener("input", validateLastName);
 email.addEventListener("input", validateEmail);
-mobile.addEventListener("input", validateMobile);
+mobile.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "").slice(0,10);
+});
 birthDate.addEventListener("input", validateBirthDate);
 
 // Gender radio list Binding
